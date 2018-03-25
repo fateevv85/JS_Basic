@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home Work 6</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h3>Home Work 6</h3>
+<fieldset>
+  <legend><h4>Задание 1</h4></legend>
+  <ul>
+    <li>Доработать функцию замены картинки в галерее таким образом, чтобы она проверяла
+        наличие картинки по указанному в src адресу.
+    </li>
+    <li>Добавить в галерею функцию перехода к следующему изображению. По сторонам от
+      большой картинки должны быть стрелки “вперед” и “назад”, по нажатию на которые
+      происходит замена изображения на следующее или предыдущее.
+    </li>
+  </ul>
+  <div class="image">
+    <div class="left active"></div>
+    <div id="big_picture_block"></div>
+    <div class="right active"></div>
+  </div>
+  <div id="gallery">
+    <img class="img-small" src="img/1-small.jpg">
+    <img class="img-small" src="img/2-small.jpg">
+    <img class="img-small" src="img/3-small.jpg">
+    <img class="img-small" src="img/4-small.jpg">
+    <img class="img-small" src="img/5-small.jpg">
+  </div>
+</fieldset>
+<fieldset>
+  <legend><h4>Задание 2</h4></legend>
+  <p>Реализовать модуль корзины.</p>
+  <ul>
+    <li>Создать блок товаров и блок корзины.</li>
+    <li>У каждого товара есть
+      кнопка «Купить», при нажатии на которую происходит добавление имени и цены товара в блок
+      корзины.
+    </li>
+    <li>Корзина должна уметь считать общую сумму заказа</li>
+  </ul>
+   <!--<button onclick="timeout()">timeout</button>-->
+  <div class="shop">
+    <div class="shp_cart">
+      <div class="items_number hidden"></div>
+      <div class="shp_cart__menu">
+        <div class="shp_cart__list"></div>
+        <div class="shp_cart__total hidden"></div>
+        <div class="shp_cart__empty">Корзина пуста!</div>
+        <div class="shp_cart__checkout delete">Checkout</div>
+        <div class="shp_cart__gotocart delete">Go to cart</div>
+      </div>
+    </div>
+    <div class="showcase">
+      <div class="gooditem">
+        <div class="image mans_t-shirt"></div>
+        <div class="addtocart_button"></div>
+        <a href="#">
+          <div>Man's T-shirt</div>
+          <p class="item_cost">$10.00</p>
+          <div></div>
+        </a>
+        <div class="item_cross"></div>
+      </div>
+      <div class="gooditem">
+        <div class="image blouse"></div>
+        <div class="addtocart_button"></div>
+        <a href="#">
+          <div>Blouse</div>
+          <p class="item_cost">$22.00</p>
+          <div></div>
+        </a>
+        <div class="item_cross"></div>
+      </div>
+      <div class="gooditem">
+        <div class="image jacket"></div>
+        <div class="addtocart_button"></div>
+        <a href="#">
+          <div>Jacket</div>
+          <p class="item_cost">$35.00</p>
+          <div></div>
+        </a>
+        <div class="item_cross"></div>
+      </div>
+    </div>
+    <div class="hidden_block"></div>
+  </div>
+</fieldset>
+<script src="js/task1.js"></script>
+<script src="js/task2.js"></script>
+</body>
+</html>

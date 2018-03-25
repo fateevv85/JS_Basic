@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Home Work 3</title>
+	</head>
+	<body>
+		
+		<fieldset>
+			<legend>
+				<h3>Home Work 3</h3>
+			</legend>
+			<fieldset>
+				<button onclick="simple()" title="Вывод простых чисел">
+				Задание 1</button>
+				<p>​ С помощью цикла while вывести все простые числа в промежутке от 0 до 100.</p>
+				<p>Всего чисел: <span id="task1_quantity">запустите скрипт</span></p>
+				<textarea id="task1" readonly style="resize: none;" cols="80"></textarea>
+			</fieldset>
+			<fieldset>
+				<button onclick="even_odd()" title="Вывод четных/нечетных чисел">Задание 2</button>
+				<p>​ С помощью цикла do…while написать функцию для вывода чисел от 0 до 10, чтобы
+					результат выглядел так:
+					0 – это ноль
+					1 – нечетное число
+					2 – четное число
+					3 – нечетное число
+					… 10
+				– четное число.</p>
+				<textarea id="task2" readonly style="resize: none;" rows="10" cols="30"></textarea> 
+			</fieldset>
+			<fieldset>
+				<button onclick="write_numbers()" title="Вывод чисел без использования тела цикла">Задание 3</button>
+				<p>Вывести с помощью цикла for числа от 0 до 9, НЕ используя тело цикла.</p>
+				<input id="task3" type="text" readonly>
+			</fieldset>
+			<fieldset>
+				<button onclick="pyramid()" title="Вывод пирамиды в консоли">Задание 4</button>
+				<p>Нарисовать пирамиду с помощью console.log</p>
+			</fieldset>
+		</fieldset>
+		<script src="task.js"></script>
+	</body>
+</html>

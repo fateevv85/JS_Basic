@@ -1,0 +1,413 @@
+/* {
+  margin: 0;
+  padding: 0;
+}*/
+.alert {
+  color: red;
+}
+.success {
+  display: inline-block;
+  position: fixed;
+  left: 38%;
+  top: -50px;
+  width: 250px;
+  height: 50px;
+  color: white;
+  background-color: greenyellow;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 46px;
+  text-align: center;
+  border-radius: 12px;
+  z-index: 900;
+}
+.cancel {
+  @extend .success;
+  background-color: rosybrown;
+}
+.active {
+  animation: addtocart 2s ease;
+  @keyframes addtocart {
+    0% { top: -50px; opacity: 0 }
+    40% { top: 50px; opacity: 1 }
+    60% { top: 50px; opacity: 1 }
+    100% { top: -50px; opacity: 0 }
+  }
+}
+.hidden {
+  visibility: hidden;
+}
+.delete {
+  display: none;
+}
+.visible {
+  visibility: visible;
+  animation: appear .5s ease;
+  @keyframes appear {
+    from { opacity: 0}
+    to { opacity: 1}
+  }
+}
+.hidden_block {
+
+}
+//для первого задания
+.image {
+  text-align: center;
+  height: 338px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    animation: appear 2s ease;
+    @keyframes appear {
+      from { opacity: 0}
+      to { opacity: 1}
+    }
+  }
+  #big_picture_block {
+    width: 600px;
+    .error {
+      height: 342px;
+      width: 600px;
+      background-color: rosybrown;
+      position: relative;
+      &:after {
+        content: "Picture not found!";
+        position: absolute;
+        left: 209px;
+        top: 150px;
+        font-size: 23px;
+      }
+    }
+  }
+  .right {
+    background-image: url(../img/forward1600.png);
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: right;
+    width: 50px;
+    height: 50px;
+    &:hover {
+      transform: scale(1.1,1.1);
+    }
+  }
+  .left {
+    @extend .right;
+    float: left;
+    transform: rotate(180deg);
+    &:hover {
+      transform: scale(1.1,1.1) rotate(180deg);
+    }
+  }
+  .inactive {
+    cursor: default;
+    opacity: .5;
+  }
+  .active {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
+#gallery {
+  width: 780px;
+  display: flex;
+  margin: 10px auto;
+  align-items: center;
+  justify-content: space-between;
+  .img-small {
+    width: 150px;
+    height: 85px;
+    cursor: pointer;
+    transition: all .3s ease 0s;
+    opacity: .7;
+    &:hover {
+      transform: scale(1.1, 1.1);
+      opacity: 1;
+    }
+  }
+  .current {
+    opacity: 1;
+    box-shadow:6px 6px 13px #000000;
+    border: 1px solid red;
+    cursor: default;
+    &:hover {
+      transform: scale(1,1);
+    }
+  }
+}
+
+.shop {
+  .mans_t-shirt {
+    background-image: url(../img/layer-2.png);
+  }
+  .blouse {
+    background-image: url(../img/layer-3.png);
+  }
+  .jacket {
+    background-image: url(../img/layer-4.png);
+  }
+}
+
+.shp_cart {
+  background-image: url(../img/shp_kart_sprite.png);
+  width: 33px;
+  height: 30px;
+  margin-left: 20px;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    background-image: url(../img/shp_kart_sprite.png);
+    background-position-y: 30px;
+    .shp_cart__menu {
+      visibility: visible;
+    }
+  }
+  .items_number {
+    color: #fef5f6;
+    text-align: center;
+    width: 19px;
+    height: 19px;
+    background: #f16d7f;
+    border-radius: 50%;
+    position: absolute;
+    left: 25px;
+    bottom: 18px;
+  }
+  .shp_cart__menu {
+    //visibility: hidden;
+    width: 262px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    z-index: 5;
+    position: absolute;
+    top: 44px;
+    left: -17px;
+    cursor: default;
+    &::after {
+      content: "";
+      border: 8px solid transparent;
+      border-bottom: 9px solid #e6e6e6;
+      position: absolute;
+      top: -18px;
+      left: 27px;
+    }
+  }
+  .gooditem {
+    margin: 21px auto 33px;
+    width: 230px;
+    height: 85px;
+    animation: appear 1s ease;
+    @keyframes appear {
+      from { opacity: 0}
+      to { opacity: 1}
+    }
+    .image {
+      width: 72px;
+      height: 85px;
+      float: left;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    .addtocart_button {
+      display: none;
+    }
+    a {
+      float: left;
+      margin-left: 14px;
+      display: block;
+      cursor: default;
+      pointer-events: none;
+      text-decoration: none;
+      div:first-child {
+        color: #222222;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      div:last-child {
+        background-image: url(../img/5stars.png);
+        width: 85px;
+        height: 14px;
+        float: left;
+        background-repeat: no-repeat;
+        margin-top: 10px;
+      }
+    }
+    .item_cost {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-top: 10px;
+      color: #f16d7f;
+      font-weight: 400;
+    }
+    .item_cross {
+      background-image: url(../img/cross-erase-mini.png);
+      width: 15px;
+      height: 15px;
+      float: right;
+      cursor: pointer;
+      &:hover {
+        background-position-y: 15px;
+      }
+    }
+  }
+  .shp_cart__total {
+    width: 228px;
+    height: 16px;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0 auto;
+    span {
+      float: right;
+    }
+  }
+  .shp_cart__checkout {
+    width: 225px;
+    height: 50px;
+    border: 1px solid #eaeaea;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+    margin-top: 32px;
+    &:hover {
+      border: 1px solid #f16d7f;
+      color: #f16d7f;
+    }
+  }
+  .shp_cart__gotocart {
+    @extend .shp_cart__checkout;
+    margin: 11px auto;
+    &:hover {
+      border: 1px solid #f16d7f;
+      color: #f16d7f;
+    }
+  }
+  .shp_cart__empty {
+    @extend .shp_cart__checkout;
+    margin: 0 auto 16px;
+  }
+}
+
+.showcase {
+  width: 50%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  .gooditem {
+    width: 252px;
+    height: 364px;
+    margin-top: 37px;
+    background-color: #000000;
+    position: relative;
+    &:hover {
+      box-shadow: 2px 2px 7px 0 #000000;
+      .image {
+        opacity: .3;
+      }
+      .addtocart_button {
+        visibility: visible;
+      }
+    }
+    .addtocart_button {
+      width: 95px;
+      height: 41px;
+      padding-left: 28px;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      background-image: url(../img/forma-1-copy.png);
+      background-repeat: no-repeat;
+      background-position: 12px 10px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 41px;
+      text-align: center;
+      position: absolute;
+      top: 98px;
+      left: 70px;
+      cursor: pointer;
+      visibility: hidden;
+      &:hover {
+        color: #f16d7f;
+      }
+      &:after {
+        content: "Add to Cart";
+      }
+    }
+    a {
+      height: 64px;
+      display: block;
+      color: #222222;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 17px 15px 8px;
+      background-color: #ffffff;
+      div:first-child {
+        color: #222222;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      p {
+        color: #f16d7f;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 16px;
+        padding-top: 17px;
+      }
+      div:last-child {
+        background-image: url(../img/5stars.png);
+        background-repeat: no-repeat;
+        width: 70px;
+        height: 14px;
+        float: right;
+        margin-top: -32px;
+      }
+    }
+    .image {
+      width: 252px;
+      height: 275px;
+      background-repeat: no-repeat;
+      background-color: #000000;
+      transition: opacity 150ms linear;
+    }
+  }
+  .incart {
+    box-shadow: 2px 2px 7px 0 #000000;
+    .image {
+      opacity: .3;
+    }
+    .addtocart_button {
+      visibility: visible;
+      background-image: url(../img/Tick_Mark_Circle-512.png);
+      background-position: 1px 1px;
+      -webkit-background-size: contain;
+      background-size: contain;
+      cursor: default;
+      &:after {
+        content: "Already in Cart!";
+        color: #f16d7f;
+      }
+    }
+  }
+}
+
